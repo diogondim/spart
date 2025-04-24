@@ -1,4 +1,4 @@
-console.log('SPART custom script - v1.5');
+console.log('SPART custom script - v1.6');
 
 function labeltoPlaceholder(sel) {
 
@@ -31,3 +31,16 @@ function removeNativeCss(){
 window.addEventListener("load", (event) => {
     removeNativeCss();
 });
+
+
+(function(){
+    var forms = document.querySelectorAll('form[id*="smartcapture"]');
+    
+    for (var i = 0; i < forms.length; i++) {
+        forms[i].addEventListener('submit', function() {
+            dataLayer.push({
+                'event': 'salesforce_submit'
+            });
+        });
+    }
+})();
