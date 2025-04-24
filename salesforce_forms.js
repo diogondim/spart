@@ -1,10 +1,11 @@
+console.log('SPART custom script - v1.5');
+
 function labeltoPlaceholder(sel) {
 
     var inputs = document.querySelectorAll(sel);
 
     for (var i = 0; i < inputs.length; i++) {
         var input = inputs[i];
-        console.log(input);
         var labelElement = input.closest('.smartcapture-controls').children[0].querySelector('label');
         if(labelElement) {
             var label = labelElement.textContent;
@@ -28,6 +29,5 @@ function removeNativeCss(){
 };
 
 window.addEventListener("load", (event) => {
-    console.log('window loaded');
     removeNativeCss();
 });
